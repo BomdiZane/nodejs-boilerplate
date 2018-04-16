@@ -15,7 +15,7 @@ config.development = {
         port: process.env.PORT || 3000,
         description: '',
         keywords: '',
-        author: "Bomdi Zane, +372 5875 7661, dzedock@yahoo.com",
+        author: "Bomdi Zane, +372 1111 0000, example@domain.com",
     },
     security: {
         cookieSeret: '',
@@ -24,10 +24,10 @@ config.development = {
     },
     database: {
         databaseHost: 'localhost',
-        databasePort: '3306',
+        databasePort: '',
         databaseName: '',
         databaseUserName: 'Bomdi Zane',
-        databaseUserPassword: 'Troycastrabay1001',
+        databaseUserPassword: '',
     },
 };
 
@@ -38,7 +38,7 @@ config.test = {
         port: process.env.PORT || 3000,
         description: '',
         keywords: '',
-        author: "Bomdi Zane, +372 5875 7661, dzedock@yahoo.com",
+        author: "Bomdi Zane, +372 1111 0000, example@domain.com",
     },
     security: {
         cookieSeret: '',
@@ -47,9 +47,9 @@ config.test = {
     },
     database: {
         databaseHost: '___.mysql.database.azure.com',
-        databasePort: '3306',
+        databasePort: '',
         databaseName: '',
-        databaseUserName: 'bomdizane@___',
+        databaseUserName: '',
         databaseUserPassword: '',
     },
 };
@@ -61,7 +61,7 @@ config.production = {
         port: process.env.PORT || 3000,
         description: '',
         keywords: '',
-        author: "Bomdi Zane, +372 5875 7661, dzedock@yahoo.com",
+        author: "Bomdi Zane, +372 1111 0000, example@domain.com",
     },
     security: {
         cookieSeret: '',
@@ -70,9 +70,9 @@ config.production = {
     },
     database: {
         databaseHost: '___.mysql.database.azure.com',
-        databasePort: '3306',
+        databasePort: '',
         databaseName: '',
-        databaseUserName: 'bomdizane@___',
+        databaseUserName: '',
         databaseUserPassword: '',
     },
 };
