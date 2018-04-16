@@ -2,13 +2,15 @@
 
 Boilerplate for NodeJS applications
 
-### SETUP
-
-
-
 ### FIRST RUN
 
+```javascript
+// Install dependencies
+npm install
 
+// Start server
+npm run build
+```
 
 ### AUTHOR
 
