@@ -1,10 +1,6 @@
 @import 'template';
 @import 'header';
-@import 'forms';
 @import 'buttons';
-@import 'dropdown';
-@import 'popup';
-@import 'tooltip';
 @import 'footer';
 
 /*Sign In Main*/
@@ -101,38 +97,4 @@
 			z-index: 10000;
 		}
 	}
-}
-
-// Sections
-
-/*Pop Up*/
-#popUpDiv{
-	.userLog{
-		color: #59b7d1;
-		min-width: 600px;
-		
-		#clientResponseInfo{
-			margin: 10px;
-			margin-top: 40px;
-			color: grey;
-			font-size: 80%;
-		}
-		.field{ margin-bottom: 30px; }
-		#clientMessage{ width: 100%; }
-		#sendMessage{
-			width: 90px;
-			margin-top: 10px;
-			@include border-radius($defaultRadius);
-		}
-	}
-}
-
-/*Animations*/
-@keyframes socialPhonePAni{
-	from{ left: 100%; }
-	to{ left: -300%; }
-}
-@keyframes cardFillAni{
-	from{ height: 0; }
-	to{ height: 100%; }
 }

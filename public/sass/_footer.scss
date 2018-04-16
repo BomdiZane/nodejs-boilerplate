@@ -10,54 +10,9 @@ footer{
 	box-shadow: 0 4px 12px 0 rgba(0,0,0,0.6);
 	background-color: $secondaryBlack;
 
-	#pageTitleFooter{
-		width: 100%;
-		font-family: Raleway;
-		margin-bottom: 20px;
-		padding: 5px 0;
-		font-size: 120%;
-		color: $bzWhite;
-		text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-		cursor: default;
-
-		span{ color: lightgreen; }
-	}
-	#slider,#subscribeDiv{
+	#subscribeDiv{
 		width: 35%;
 		min-width: 280px;
-	}
-	#slider{
-		position: relative;
-		right: 600px;
-		max-height: 250px;
-		overflow: hidden;
-		display: none;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: center;
-		z-index: 400;
-		background-color: white;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		@include border-radius(2px);
-		text-align: center;
-		
-		img{ max-height: 90px; }
-		p{
-			border-top: 1px solid grey;
-			padding: 10px;
-			font-size: 80%;
-			color: $paraColor;
-		}
-	}
-	.showSlider{
-		right: 600px;
-		animation: slideInAni 1s forwards;
-	}
-	.hideSlider{
-		right: 0;
-		animation: slideOutAni 0.5s forwards linear;
-	}
-	#subscribeDiv{
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;

@@ -9,7 +9,7 @@ header{
 	height: 100px;
 	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 	border-bottom: 2px solid $primaryGrey;
-	// background-color: $secondaryBlack;
+	background-color: $primaryBlue;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
@@ -21,29 +21,5 @@ header{
 		color: $bzWhite;
 		text-shadow: 0 4px 8px rgba(0,0,0,0.3);
 		cursor: default;
-
-		span{
-			&:first-child{ color: lightgreen; }
-			&:last-child{
-				font: 17px 'Indie Flower';
-				color: grey;
-			}
-		}
-	}
-	#menuDiv{
-		position: absolute;
-		bottom: -20px;
-		right: 5%;
-		left: 5%;
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-
-		p{
-			@extend .menuItem;
-			@include border-radius(50px);
-			width: 130px;
-			// font-size: 10px;
-		}
 	}
 }

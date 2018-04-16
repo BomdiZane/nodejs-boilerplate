@@ -4,14 +4,11 @@
 /*VARIABLES*/
 $bzGreen: #18a888;
 $bzBlue: #1888a8;
-$bzWhite: white;
-$bzWhite2: #fbfbfb;
+$bzWhite: #fbfbfb;
 $primaryGrey: #eee;
 $secondaryGrey: #bbb;
 $bzRed: crimson;
 $defaultRadius: 5px;
-$bzBlack: #222;
-$bzBlack2: #373f46;
 $primaryBlue: #3a5b78;
 $primaryBlack: #2d333a;
 $secondaryBlack: #262b30;
@@ -86,31 +83,6 @@ h3{
 	color: $bzGreen;
 	text-align: left;
 }
-.menuItem{
-	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.3);
-	background-color: $primaryGrey;
-	color: $paraColor;
-	text-align: center;
-	padding: 6px 0;
-	cursor: pointer;
-	position: relative;
-	&:hover{ background-color: $secondaryGrey; }
-}
-.selectedMenu{
-	display: flex;
-	justify-content: center;
-	background-color: $bzRed !important;
-	color: $bzWhite !important;
-	cursor: default;
-	&::before{
-		content: " ";
-		position: absolute;
-		top: 100%;
-		border-width: 10px;
-		border-style: solid;
-		border-color: $bzRed transparent transparent transparent;
-	}
-}
 
 // STYLE
 body{
@@ -121,27 +93,10 @@ body{
 	flex-direction: column;
 	align-items: center;
 	background-color: $primaryBlack;
-	// background-image: url(/Files/body.png);
+	background-image: url(/Files/background.png);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	background-attachment: fixed;
-}
-
-/*Header*/
-#statusP{
-	display: none;
-	position: fixed;
-	left: 0;
-	right: 0;
-	font-size: 200%;
-	margin: 0;
-	text-align: center;
-	color: $bzWhite;
-	cursor: default;
-	text-shadow: 0 3px 6px rgba(0,0,0,0.05);
-	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-	animation: statusPAni 5s forwards;
-	z-index: 1000000;
 }
 
 .socialImage{
@@ -182,46 +137,4 @@ section{
 			z-index: 200;
 		}
 	}
-}
-
-.noData{
-	width: 100%;
-	font-size: 160%;
-	color: $bzRed;
-	text-align: center;
-}
-
-/*Wait Div*/
-#waitDiv{
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	display: none;
-	background-color: #eee;
-	opacity: 0.4;
-	z-index: 5000;
-	background-image: url('/Files/processing.gif');
-	background-repeat: no-repeat;
-	background-position: top center;
-}
-#popUpBlur{ @extend #waitDiv; }
-
-.hide{ display: none; }
-
-/*Animations*/
-@keyframes statusPAni{
-	0%{ top: -70px; }
-	20%{ top: 0; }
-	80%{ top: 0; }
-	100%{ top: -70px; }
-}
-@keyframes slideInAni{
-	from{ right: 600px; }
-	to{ right: 0; }
-}
-@keyframes slideOutAni{
-	from{ right: 0; }
-	to{ right: 600px; }
 }
