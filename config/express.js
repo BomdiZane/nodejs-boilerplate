@@ -1,11 +1,9 @@
-const cluster = require('cluster'),
-      express  = require('express'),
-      path  = require('path'),
+const express  = require('express'),
       // bcrypt  = require('bcrypt'),
       passport  = require('passport'),
       helmet  = require('helmet'),
       hbs = require('express-handlebars'),
-      expressSession = require('express-session'),
+      // expressSession = require('express-session'),
       bodyParser = require('body-parser'),
       cookieParser = require('cookie-parser'),
       expressValidator = require('express-validator'),
@@ -15,13 +13,15 @@ const cluster = require('cluster'),
       compress = require('compression'),
       methodOverride = require('method-override');
 
+
 module.exports = (app, config) => {
   const env = process.env.NODE_ENV || 'development',
-        renderError = require(`${config.root}/utils/bsUtils`).renderError;
+      renderError = require(`${config.root}/utils/bsUtils`).renderError;
+
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
   
-  app.engine('handlebars', hbs({
+  app.engine('hbs', hbs({
     extname: 'hbs',
     layoutsDir: `${config.root}/app/views/layouts/`,
     defaultLayout: 'main',
@@ -42,11 +42,11 @@ module.exports = (app, config) => {
   app.use(express.static(`${config.root}/public`));
   app.use(methodOverride());
   app.use(expressValidator());
-  app.use(expressSession({
-    secret: config.security.sessionSecret,
-    saveUninitialized: false,
-    resave: false
-  })); //NB...Memory session storage is not recommended for production
+  // app.use(expressSession({
+  //   secret: config.security.sessionSecret,
+  //   saveUninitialized: false,
+  //   resave: false
+  // })); //NB...Memory session storage is not recommended for production
   app.use(passport.initialize());
   app.use(passport.session());
   app.use((req, res, next) => {
