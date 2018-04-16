@@ -1,0 +1,70 @@
+/*Dropdowns*/
+.dropDiv{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 15px;
+	
+	.dropdown{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		width: 10%;
+		
+		.dropButton{
+			width: 100%;
+			padding: 7.5px 0;
+			cursor: pointer;
+			@include border-radius(0 $defaultRadius $defaultRadius 0);
+			
+			&:hover{ background-color: #ddd; }
+		}
+		.dropList{
+			position: absolute;
+			left: 0;
+			top: 20px;
+			display: none;
+			flex-direction: column;
+			min-width: 260px;
+			max-height: 40vh;
+			padding: 5px 0;
+			background-image: url('/Files/background.jpg');
+			background-size: 100% 100%;
+			@include border-radius($defaultRadius);
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+			overflow-y: auto;
+			z-index: 1000;
+			
+			.dropItem{
+				width: 100%;
+				margin: 0;
+				padding: 4px 40px;
+				font-size: 90%;
+				text-align: left;
+				color: $paraColor;
+				cursor: pointer;
+				
+				&:hover{
+					background-color: $primaryGrey;
+					color: lightseagreen;
+				}
+			}
+			.defaultItem{ color: tomato; }
+		}
+	}
+	.nameP{
+		width: 90% !important;
+		margin: 0;
+		padding: 6px;
+		text-align: center;
+		font-size: 78%;
+		background-color: white;
+		color: #888;
+		cursor: pointer;
+		@include border-radius($defaultRadius 0 0 $defaultRadius);
+		box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.2) inset;
+	}
+}

@@ -1,0 +1,18 @@
+{{>header}}
+
+<section>
+    <div>
+        <p>Admin Login</p>
+    </div>
+    {{#if error}}
+        {{#each error}}
+            <ul>
+                <li>{{this.msg}}</li>
+            </ul>
+        {{/each}}
+    {{/if}}
+    <form action="/adminLogIn" method="post">
+        <input type="password" placeholder="access code" class="field" name="accessCode" pattern="[a-zA-Z0-9]{8,}" maxlength="20" autofocus required />
+        <input type="submit" value="Submit">
+    </form>
+</section>

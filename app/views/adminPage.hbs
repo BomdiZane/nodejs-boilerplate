@@ -1,0 +1,97 @@
+{{!-- Logout --}}
+<form method="get" action="/logOut">
+	<input type="submit" name='adminLogOut' title="Log Out" value="log out" />
+</form>
+
+{{!-- Menus --}}
+<div id='mainMenu'>
+	<p id="section1" class="selectedMenu">section1</p>
+	<p id="section2">section2</p>
+	<p id="section3">section3</p>
+	<p id="section4">section4</p>
+	<p id="section5">section5</p>
+	<p id="section6">section6</p>
+</div>
+
+{{!-- Section Header --}}
+<div id="sectionHeader">
+	<div>
+		<p id="Select" class="views selectedView" title="select">&#x1f441;</p>
+		<p id="Add" class="views" title="add">+</p>
+	</div>
+	<p id='sectionName'></p>
+</div>
+
+{{!-- ViewType Template --}}
+<template id="viewTypeTemplate">
+	<select class="viewSelect">
+		<option value="all">All</option>
+		<option value="active">Active</option>
+		<option value="inactive">Inactive</option>
+	</select>
+</template>
+
+{{!-- Section template --}}
+<template id="sectionTemplate">
+	<section id="templateSection">
+		<div id="templateSelect">
+			<input type="search" placeholder="filter" />
+			<table id="templateTable">
+				<tr>
+					<th>No.</th>
+					<th>Thumbnail</th>
+					<th>template</th>
+					<th>Owner</th>
+					<th>Phone</th>
+					<th>Email</th>
+					<th>Institution</th>
+				</tr>
+			</table>
+			<p class="noData">No template</p>
+			<div class="pagination" id="templateTablePagination"></div>
+		</div>
+		<div id="templateAdd">
+			<div class='dropDiv half'>
+				<div class="dropdown">
+					<input type="button" id="institutionDrop" class="dropButton" value="&#x25bc;" />
+					<div id="institutionList" class="dropList">
+						<input type="text" class="filter" placeholder="filter" />
+					</div>
+				</div>
+				<p id="institutionNameP" class="nameP">Select Institution</p>
+			</div>
+			<input type="text" id="templateName" class="field half" placeholder="template Name" title="template Name" pattern='[a-zA-Z0-9\s]{2,}' maxlength="100" required />
+			<input type="text" id="templateOwner" class="field half" placeholder="Owner's Name" title="Owner's Name" pattern='[a-zA-Z\s]{2,}' maxlength="100" required />
+			<div class="half">
+				<input type="phone" id="templatePhone" class="field half" placeholder="Phone" title="Phone Number" pattern='[0-9\s]{9,}' maxlength="20" required />
+				<input type="email" id="templateEmail" class="field half" placeholder="Email" title="Email Address" maxlength="50" required />
+			</div>
+			<div class="half">
+				<input type="text" id="location" class="field half" placeholder="Location" title="Location" pattern='[a-zA-Z0-9,\s]{2,}' maxlength="100" required />
+				<input type="number" id="distance" class="field half" placeholder="Distance (in meters)" title="Distance from campus (in metters)" required />
+			</div>
+			<textarea id="transportDetails" placeholder="Transport Details" title="Transport Details"  maxlength="250"></textarea>
+			<p class="label">Room Types</p>
+			<div id="roomTypesHolder"></div>
+			<textarea id="rules" placeholder="Rules" title="Rules" maxlength="500"></textarea>
+			<textarea id="extraInfo" placeholder="Extra Info" title="Extra Info" maxlength="500"></textarea>
+			<p class="imageUploadIntruction">** At least 1 image is required as a thumbnail **</p>
+			<div class="dropTarget" id="templateDropTarget">
+				<input type="file" id="templateFileInput" multiple accept="image/*" maxlength='100' class="hide fileInput" />
+				<p>Drag and Drop image(s) here</p>
+				<label for="templateFileInput">Select Image(s) &#x25b2;</label>
+			</div>
+			<div id="templateImageHolder" class="imageHolder"></div>
+			<input type="button" id="templateAdd" class="submit" value="Add" />
+			<input type="button" id="templateUpdate" class="submit hide" value="Update" />
+			<button id="templateBackControl" class="control backControl" title="back">&#x2770;&#x2770;&#x2770;&#x2770;</button>
+		</div>
+	</section>
+</template>
+
+{{>popUp}}
+
+{{>footer}}
+
+{{!-- Scripts --}}
+<script type="text/javascript" src='/JS/adminPage.min.js' async></script>

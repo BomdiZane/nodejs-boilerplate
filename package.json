@@ -1,0 +1,53 @@
+{
+  "name": "new-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp mocha",
+    "serve": "nodemon index.js",
+    "build": "gulp"
+  },
+  "author": "Bomdi Zane",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "*",
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "helmet": "*",
+    "mysql": "*",
+    "passport": "",
+    "prettyjson": "",
+    "serve-favicon": "*",
+    "compression": "^1.5.2",
+    "method-override": "^2.3.0",
+    "glob": "^6.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-env": "*",
+    "chai": "*",
+    "debug": "*",
+    "gulp": "*",
+    "gulp-babel": "*",
+    "gulp-changed": "*",
+    "gulp-jshint": "*",
+    "gulp-livereload": "*",
+    "gulp-mocha": "*",
+    "gulp-nodemon": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify-es": "*",
+    "gulp-uglifycss": "*",
+    "jshint": "*",
+    "morgan": "*",
+    "webpack": "*",
+    "webpack-dev-server": "*"
+  }
+}

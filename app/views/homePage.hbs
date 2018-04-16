@@ -1,0 +1,43 @@
+{{!-- Header --}}
+{{>header}}
+
+{{!-- Main Sign In --}}
+<div id="signInDiv">
+    <input type="button" id="signInMain" value="Sign In" />
+    <div id="signInButtons">
+        <p>with:</p>
+        <button id="mainGoogleLogIn" class="googleLogIn">Google</button>
+        <button id="mainFacebookLogIn" class="facebookLogIn">Facebook</button>
+    </div>
+</div>
+{{!-- Signed In User --}}
+<img id='loggedInUser' class="socialImage commentThumb" title="Sign Out" />
+
+{{!-- Social Media --}}
+<div id='socialMediaTop'>
+    <a href="https://github.com/BomdiZane" target="_blank"><img id='socialGithub' class="socialImage" title="Github profile" src="/files/github.png" /></a>
+    <a href="https://www.facebook.com/bomdi.zane1" target="_blank"><img id='socialFacebook' class="socialImage" title="Facebook profile" src="/files/facebook.png" /></a>
+    <a href="https://www.youtube.com/channel/UCUzXaXTfVGJiPmkTcSa29YA" target="_blank"><img id='socialYoutube' class="socialImage" title="YouTube channel" src="/files/youtube.png" /></a>
+</div>
+<div id='socialMediaBottom'>
+    <img id='socialEmail' class="socialImage" title="Leave me a message" src="/files/email.png" />
+    <div>
+        <img id='socialPhone' class="socialImage" title="Call me" src="/files/phone.png" />
+        <p id="socialPhoneP">+372 5875 7661</p>
+    </div>
+</div>
+
+{{#if articles}}
+    {{#each articles}}
+        <ul>
+            <li><strong>{{title}} -</strong> ({{url}}) </br> {{text}}</li>
+        </ul>
+    {{/each}}
+{{/if}}
+
+{{>popUp}}
+
+{{>footer}}
+
+{{!-- Scripts --}}
+<script type="text/javascript" src='/js/homePage.min.js' async></script>

@@ -1,0 +1,227 @@
+/*FONTS*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Indie+Flower|Raleway|Lato|Roboto);
+
+/*VARIABLES*/
+$bzGreen: #18a888;
+$bzBlue: #1888a8;
+$bzWhite: white;
+$bzWhite2: #fbfbfb;
+$primaryGrey: #eee;
+$secondaryGrey: #bbb;
+$bzRed: crimson;
+$defaultRadius: 5px;
+$bzBlack: #222;
+$bzBlack2: #373f46;
+$primaryBlue: #3a5b78;
+$primaryBlack: #2d333a;
+$secondaryBlack: #262b30;
+$paraColor: rgba(0,0,0,0.87);
+
+/*MIXINGS*/
+@mixin transition($values...){
+	-webkit-transition: $values;
+	-moz-transition: $values;
+	-ms-transition: $values;
+	transition: $values;
+}
+@mixin border-radius($radius...) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// CSS RESET
+*{
+	box-sizing:border-box;
+	@include transition(all 0.1s ease-out);
+	outline: none;
+	border: none;
+}
+input[type='radio']{ cursor: pointer; }
+input[type='submit']{
+	margin: 30px 0;
+	padding: 5px 40px;
+	background-color: $bzGreen;
+	@include border-radius(20px);
+	cursor: pointer;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.05);
+	&:hover{
+		color: $bzWhite;
+		background-color: $bzRed;
+	}
+}
+p{
+	cursor: default;
+	margin: 0;
+	color: $paraColor;
+	background-color: var(--color);
+}
+a{
+	text-decoration: none;
+	&:link { color: $bzBlue; }
+	&:visited { color: goldenrod; }
+	&:hover { color: blue; }
+	&:active { color: tomato; }
+}
+h1,h2,h3{
+	width: 86%;
+	cursor: default;
+	margin: 0;
+}
+h1{
+	font: 170% Lato;
+	color: #1e9dc0;
+	margin-bottom: 10px;
+}
+h2{
+	font: 160% Raleway;
+	color: $bzBlue;
+	margin: 10px 0;
+	text-align: center;
+	// text-shadow: 0 3px 8px 0 rgba(0,0,0,0.3);
+}
+h3{
+	font: 140% Raleway;
+	color: $bzGreen;
+	text-align: left;
+}
+.menuItem{
+	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.3);
+	background-color: $primaryGrey;
+	color: $paraColor;
+	text-align: center;
+	padding: 6px 0;
+	cursor: pointer;
+	position: relative;
+	&:hover{ background-color: $secondaryGrey; }
+}
+.selectedMenu{
+	display: flex;
+	justify-content: center;
+	background-color: $bzRed !important;
+	color: $bzWhite !important;
+	cursor: default;
+	&::before{
+		content: " ";
+		position: absolute;
+		top: 100%;
+		border-width: 10px;
+		border-style: solid;
+		border-color: $bzRed transparent transparent transparent;
+	}
+}
+
+// STYLE
+body{
+	margin: 0;
+	font: medium 'Lucida Sans Unicode', sans-serif;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: $primaryBlack;
+	// background-image: url(/Files/body.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+/*Header*/
+#statusP{
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	font-size: 200%;
+	margin: 0;
+	text-align: center;
+	color: $bzWhite;
+	cursor: default;
+	text-shadow: 0 3px 6px rgba(0,0,0,0.05);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+	animation: statusPAni 5s forwards;
+	z-index: 1000000;
+}
+
+.socialImage{
+	width: 35px;
+	height: 35px;
+	margin: 5px 0;
+	cursor: pointer;
+	@include border-radius(20px);
+	box-shadow: 0 0 4px 0 rgba(0,0,0,0.3);
+	@include transition(all 0.3s ease-out);
+	&:hover{ transform: rotateZ(360deg); }
+}
+
+/*Content*/
+section{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	width: 100vw;
+	padding: 50px;
+	margin-top: 80px;
+
+	.selectedSideMenu{
+		position: relative;
+		display: flex;
+		justify-content: flex-end;
+		background-color: $bzRed !important;
+		color: $bzWhite !important;
+		cursor: default !important;
+		&::before{
+			content: " ";
+			position: absolute;
+			left: 100%;
+			border-width: 10px;
+			border-style: solid;
+			border-color: transparent transparent transparent $bzRed;
+			z-index: 200;
+		}
+	}
+}
+
+.noData{
+	width: 100%;
+	font-size: 160%;
+	color: $bzRed;
+	text-align: center;
+}
+
+/*Wait Div*/
+#waitDiv{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: none;
+	background-color: #eee;
+	opacity: 0.4;
+	z-index: 5000;
+	background-image: url('/Files/processing.gif');
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+#popUpBlur{ @extend #waitDiv; }
+
+.hide{ display: none; }
+
+/*Animations*/
+@keyframes statusPAni{
+	0%{ top: -70px; }
+	20%{ top: 0; }
+	80%{ top: 0; }
+	100%{ top: -70px; }
+}
+@keyframes slideInAni{
+	from{ right: 600px; }
+	to{ right: 0; }
+}
+@keyframes slideOutAni{
+	from{ right: 0; }
+	to{ right: 600px; }
+}

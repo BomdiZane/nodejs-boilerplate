@@ -1,0 +1,17 @@
+@import 'template';
+@import 'forms';
+@import 'footer';
+
+section{
+    min-height: 75vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.errorMessage{
+    width: 86%;
+    font-family: Raleway;
+    line-height: 1.5em;
+    color: #f1f1f1;
+}
+#scrollToTop{ display: none; }

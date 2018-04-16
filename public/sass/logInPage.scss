@@ -1,0 +1,51 @@
+@import 'template';
+@import 'header';
+@import 'forms';
+
+section{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 0;
+
+    div{
+        width: 45%;
+        display: flex;
+        justify-content: flex-start;
+
+        p{
+            width: unset;
+            font-size: 90%;
+            color: #ddd;
+            background-color: rgb(250, 86, 86);
+            margin: 0;
+            padding: 3px 5px;
+            @include border-radius($defaultRadius $defaultRadius 0 0);
+            box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+        }
+    }
+    ul{
+        width: 45%;
+        color: red;
+        font-size: 80%;
+    }
+    form{
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        .field{
+            @include border-radius(0 $defaultRadius $defaultRadius $defaultRadius);
+            &:invalid{ border-left: none; }
+        }
+        input[type='submit']{ padding: 6px 40px; }
+    }
+}
+
+header{
+    height: 70px;
+    border-bottom: 2px solid grey;
+	#menuDiv{ display: none; }
+}
