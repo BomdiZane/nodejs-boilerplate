@@ -9,14 +9,15 @@ const gulp = require('gulp'),
 	  uglifycss = require('gulp-uglifycss'),
 	  mocha = require('gulp-mocha'),
 	  livereload = require('gulp-livereload'),
-	  nodemon = require('gulp-nodemon');
+	  nodemon = require('gulp-nodemon'),
+	  config = require('./config/credentials');
 
-const hintSrc = ['*.js', 'lib/*.js', 'tests/*.js', 'db_models/*.js'],
+const hintSrc = ['*.js', 'public/lib/*.js', 'tests/*.js', 'app/**/*.js', 'config/*.js'],
 	testSrc = 'tests/*.js',
-	uglifySrc = 'lib/*.js',
-	uglifyDest = 'app/js/',
-	sassSrc = 'sass/*.scss',
-	sassDest = 'app/css/';
+	uglifySrc = 'public/lib/*.js',
+	uglifyDest = 'public/js/',
+	sassSrc = 'public/sass/*.scss',
+	sassDest = 'public/css/';
 
 // JS Hint
 gulp.task('hint', function() {
@@ -57,11 +58,11 @@ gulp.task('sass', function() {
 // Nodemon
 gulp.task('server',function(){  
     nodemon({
-		script: 'index.js',
-		watch: ['views/**/*.*','index.js','routes/**/*.js'],
+		script: 'server.js',
+		watch: ['app/**/*.*','server.js'],
 		ext: 'js hbs'
     }).on('restart',function(){  
-		gulp.src('index.js')
+		gulp.src('server.js')
 			.pipe(livereload());
 	});
 });
@@ -69,10 +70,10 @@ gulp.task('server',function(){
 // Watch
 gulp.task('watch', function () {
 	livereload.listen();
-	gulp.watch(['*.js', 'db_models/*.js'],['hint']);
-	gulp.watch('lib/*.js',['hint','test','uglify']);
+	gulp.watch(['*.js', 'app/**/*.js', 'config/*.js'],['hint']);
+	gulp.watch('public/lib/*.js',['hint','test','uglify']);
 	gulp.watch('tests/*.js',['hint','test']);
-	gulp.watch('sass/*.scss',['sass']);
+	gulp.watch('public/sass/*.scss',['sass']);
 });
 
 gulp.task('default', ['server','hint','test','uglify','sass','watch']);
