@@ -8,6 +8,7 @@ router.get('/', (req, res, next) => {
   const articles = [new Article(), new Article()];
   res.render('homePage', {
     title: 'API Routes',
+    stylesheet: '/css/homePage.min.css',
     articles: articles
   });
 });

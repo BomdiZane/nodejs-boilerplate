@@ -98,7 +98,6 @@ function sendAjax(options){
 /*Alternatively,
 Create and Send Ajax requests in one function using optional arguments.*/
 function ajaxRequest(method, url, callback, data=null, async=true){
-	'use strict';
 	
 	// check passed arguments
 	if (typeof url == 'undefined' || typeof callback == 'undefined' || url === '' || (method.toLowerCase() === "post" && url.indexOf('?') > -1)){

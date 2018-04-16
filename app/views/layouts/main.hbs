@@ -7,29 +7,11 @@
 		<meta name="keywords" content={{keywords}}>
 		<meta name="description" content={{description}}>
 		<meta name='viewport' content='width=device-width, initial-scale=1'>
-		{{#if login}}
-			<meta property="og:locale" content="en_US" />
-			<meta property="og:type" content="website" />
-			<meta property="og:title" content={{ title }} />
-			<meta property="og:description" content={{description}} />
-			<meta property="og:url" content="http://bomdizane.com/" />
-			<meta property="og:site_name" content={{ title }} />
-			<meta property="og:image" content="http://bomdizane.com/Files/background.jpg" />
-			<meta name="google-signin-client_id" content="878555846318-p6gkt03i8k8p8i7jj37fp6cv3f5g1e95.apps.googleusercontent.com">
-			<link rel="canonical" href="http://www.bomdizane.com" />
-		{{/if}}
 		<link rel="stylesheet" href={{ stylesheet }}>
 	</head>
 	<body>
-		<p id='statusP'></p>
-		<div id="fb-root"></div>
-		<div id='waitDiv'></div>
 		{{{body}}}
 		<script src="//localhost:35729/livereload.js"></script>
-		<script type="text/javascript" src='/JS/zaneUtils.js' async></script>
-		<script type="text/javascript" src='/JS/bsUtils.min.js' async></script>
-		{{#if login}}
-			<script src="https://apis.google.com/js/platform.js" async defer></script>
-		{{/if}}
+		<script type="text/javascript" src='/js/zaneUtils.min.js' async></script>
 	</body>
 </html>
