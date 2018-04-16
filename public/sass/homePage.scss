@@ -1,6 +1,7 @@
 @import 'template';
 @import 'header';
 @import 'buttons';
+@import 'forms';
 @import 'footer';
 
 /*Sign In Main*/
@@ -68,33 +69,4 @@
 	justify-content: flex-start;
 	align-items: flex-start;
 	z-index: 1500;
-}
-#socialMediaBottom{
-	@extend #socialMediaTop;
-	left: unset;
-	top: unset;
-	right: 10px;
-	bottom: 10px;
-
-	div{
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		position: relative;
-		
-		p{
-			text-align: right;
-			position: absolute;
-			left: 100%;
-			margin: 0;
-			padding: 6px 10px;
-			@include border-radius($defaultRadius);
-			box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-			color: $bzWhite;
-			background-color: #008888;
-			display: none;
-			animation: socialPhonePAni 0.5s forwards;
-			z-index: 10000;
-		}
-	}
 }

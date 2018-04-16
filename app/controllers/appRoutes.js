@@ -5,10 +5,10 @@ const express = require('express'),
 module.exports = (app) => app.use('/', router);
 
 router.get('/', (req, res, next) => {
-  const articles = [new Article(), new Article()];
+  // const articles = [new Article(), new Article()];
   res.render('homePage', {
     title: 'Bomdi Zane',
     stylesheet: '/css/homePage.min.css',
-    articles: articles
+    // articles: articles
   });
 });

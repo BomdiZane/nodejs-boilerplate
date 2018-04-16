@@ -6,20 +6,20 @@ header{
 	z-index: 300;
 	width: 100vw;
 	max-width: 100vw;
-	height: 100px;
+	padding: 10px;
+	padding-left: 10%;
 	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-	border-bottom: 2px solid $primaryGrey;
 	background-color: $primaryBlue;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: flex-start;
 	
 	#pageTitle{
-		font: 200% Raleway;
+		font: 160% Raleway;
 		margin: 0;
 		padding: 5px 0;
 		color: $bzWhite;
-		text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+		text-shadow: 0 4px 8px rgba(0,0,0,0.1);
 		cursor: default;
 	}
 }

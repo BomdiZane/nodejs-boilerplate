@@ -35,7 +35,6 @@ $paraColor: rgba(0,0,0,0.87);
 	outline: none;
 	border: none;
 }
-input[type='radio']{ cursor: pointer; }
 input[type='submit']{
 	margin: 30px 0;
 	padding: 5px 40px;
@@ -48,40 +47,28 @@ input[type='submit']{
 		background-color: $bzRed;
 	}
 }
+
 p{
 	cursor: default;
 	margin: 0;
 	color: $paraColor;
 	background-color: var(--color);
 }
-a{
-	text-decoration: none;
-	&:link { color: $bzBlue; }
-	&:visited { color: goldenrod; }
-	&:hover { color: blue; }
-	&:active { color: tomato; }
-}
-h1,h2,h3{
-	width: 86%;
-	cursor: default;
-	margin: 0;
-}
+
 h1{
+	cursor: default;
 	font: 170% Lato;
 	color: #1e9dc0;
+	margin-top: 60px;
 	margin-bottom: 10px;
 }
+
 h2{
-	font: 160% Raleway;
+	cursor: default;
+	font: 140% Lato;
 	color: $bzBlue;
-	margin: 10px 0;
-	text-align: center;
-	// text-shadow: 0 3px 8px 0 rgba(0,0,0,0.3);
-}
-h3{
-	font: 140% Raleway;
-	color: $bzGreen;
-	text-align: left;
+	margin-top: 0;
+	margin-bottom: 10px;
 }
 
 // STYLE
@@ -92,11 +79,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: $primaryBlack;
-	background-image: url(/Files/background.png);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background-attachment: fixed;
+	background-color: $bzWhite;
 }
 
 .socialImage{
@@ -113,28 +96,12 @@ body{
 /*Content*/
 section{
 	display: flex;
-	justify-content: center;
-	align-items: flex-start;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
 	flex-wrap: wrap;
 	width: 100vw;
+	min-height: 100vh;
 	padding: 50px;
 	margin-top: 80px;
-
-	.selectedSideMenu{
-		position: relative;
-		display: flex;
-		justify-content: flex-end;
-		background-color: $bzRed !important;
-		color: $bzWhite !important;
-		cursor: default !important;
-		&::before{
-			content: " ";
-			position: absolute;
-			left: 100%;
-			border-width: 10px;
-			border-style: solid;
-			border-color: transparent transparent transparent $bzRed;
-			z-index: 200;
-		}
-	}
 }
