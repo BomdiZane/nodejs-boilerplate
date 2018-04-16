@@ -2,15 +2,15 @@
 
 Boilerplate for NodeJS applications
 
-## SETUP
+### SETUP
 
 
 
-## FIRST RUN
+### FIRST RUN
 
 
 
-## AUTHOR
+### AUTHOR
 
 Adombang Munang (Bomdi Zane)
 
