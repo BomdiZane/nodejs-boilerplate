@@ -1,6 +1,6 @@
 const express = require('express'),
       router = express.Router(),
-      Article = require('../models/article');
+      Article = require('../models/sampleModel');
 
 module.exports = (app) => app.use('/', router);
 

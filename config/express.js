@@ -1,7 +1,7 @@
 const cluster = require('cluster'),
       express  = require('express'),
       path  = require('path'),
-      bcrypt  = require('bcrypt'),
+      // bcrypt  = require('bcrypt'),
       passport  = require('passport'),
       helmet  = require('helmet'),
       hbs = require('express-handlebars'),
@@ -13,11 +13,11 @@ const cluster = require('cluster'),
       logger = require('morgan'),
       glob = require('glob'),
       compress = require('compression'),
-      methodOverride = require('method-override'),
-      renderError = require(`${config.root}/utils/bsUtils`).renderError;
+      methodOverride = require('method-override');
 
 module.exports = (app, config) => {
-  const env = process.env.NODE_ENV || 'development';
+  const env = process.env.NODE_ENV || 'development',
+        renderError = require(`${config.root}/utils/bsUtils`).renderError;
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
   
@@ -60,7 +60,7 @@ module.exports = (app, config) => {
   });
 
   // 404 catch-all handler
-  router.use((req, res, next) => {
+  app.use((req, res, next) => {
     res.render('404', {
           title: 'Not Found - Bomdi Zane',
           stylesheet: '/css/error.min.css',

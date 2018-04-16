@@ -19,7 +19,7 @@ else{
     module.exports = require('./config/express')(app, config);
 
     app.listen(
-        config.port,
-        () => console.log(`Server (Process ID: ${process.pid}) started on http://localhost:${app.get('port')}. press Ctrl-C to terminate.`)
+        config.app.port,
+        () => console.log(`Server (Process ID: ${process.pid}) started on http://localhost:${config.app.port}. press Ctrl-C to terminate.`)
     );
 }

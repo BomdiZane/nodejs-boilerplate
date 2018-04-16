@@ -6,8 +6,8 @@ module.exports = (app) => app.use('/api', router);
 
 router.get('/', (req, res, next) => {
   const articles = [new Article(), new Article()];
-  res.render('index', {
-    title: 'Generator-Express MVC',
+  res.render('homePage', {
+    title: 'API Routes',
     articles: articles
   });
 });
