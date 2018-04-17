@@ -2,8 +2,6 @@ const cluster = require('cluster'),
       express = require('express'),
       config = require('./config/credentials');
 
-
-
 if (cluster.isMaster){
     // Master cluster
 
@@ -14,7 +12,7 @@ if (cluster.isMaster){
 }
 else{
     // Child cluster
-    app  = express();
+    let app  = express();
 
     module.exports = require('./config/express')(app, config);
 
