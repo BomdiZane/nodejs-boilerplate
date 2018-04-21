@@ -3,7 +3,7 @@
  *
  */
 const path = require('path'),
-    rootPath = path.normalize(__dirname + '/..'),
+    rootPath = path.normalize(`${__dirname}/..`),
     env = typeof(process.env.NODE_ENV) == 'string' ? process.env.NODE_ENV.toLowerCase() : '';
 
 let config = {};
@@ -13,21 +13,21 @@ config.development = {
     root: rootPath,
     app: {
         port: process.env.PORT || 3000,
-        description: '',
-        keywords: '',
+        description: 'App description',
+        keywords: 'app, key, words',
         author: "Bomdi Zane, +372 1111 0000, example@domain.com",
     },
     security: {
-        cookieSeret: '',
-        sessionSecret: '',
+        cookieSeret: 'cookiesecret',
+        sessionSecret: 'sessionsecret',
         saltRounds: 10,
     },
     database: {
         databaseHost: 'localhost',
-        databasePort: '',
-        databaseName: '',
+        databasePort: '3306',
+        databaseName: 'db_name',
         databaseUserName: 'Bomdi Zane',
-        databaseUserPassword: '',
+        databaseUserPassword: 'password',
     },
 };
 
@@ -36,21 +36,21 @@ config.test = {
     root: rootPath,
     app: {
         port: process.env.PORT || 3000,
-        description: '',
-        keywords: '',
+        description: 'App description',
+        keywords: 'app, key, words',
         author: "Bomdi Zane, +372 1111 0000, example@domain.com",
     },
     security: {
-        cookieSeret: '',
-        sessionSecret: '',
+        cookieSeret: 'cookiesecret',
+        sessionSecret: 'sessionsecret',
         saltRounds: 10,
     },
     database: {
-        databaseHost: '___.mysql.database.azure.com',
-        databasePort: '',
-        databaseName: '',
-        databaseUserName: '',
-        databaseUserPassword: '',
+        databaseHost: 'localhost',
+        databasePort: '3306',
+        databaseName: 'db_name',
+        databaseUserName: 'Bomdi Zane',
+        databaseUserPassword: 'password',
     },
 };
 
@@ -59,21 +59,21 @@ config.production = {
     root: rootPath,
     app: {
         port: process.env.PORT || 3000,
-        description: '',
-        keywords: '',
+        description: 'App description',
+        keywords: 'app, key, words',
         author: "Bomdi Zane, +372 1111 0000, example@domain.com",
     },
     security: {
-        cookieSeret: '',
-        sessionSecret: '',
+        cookieSeret: 'cookiesecret',
+        sessionSecret: 'sessionsecret',
         saltRounds: 10,
     },
     database: {
-        databaseHost: '___.mysql.database.azure.com',
-        databasePort: '',
-        databaseName: '',
-        databaseUserName: '',
-        databaseUserPassword: '',
+        databaseHost: '1.mysql.database.azure.com',
+        databasePort: '3306',
+        databaseName: '1',
+        databaseUserName: 'bomdizane@1',
+        databaseUserPassword: 'password',
     },
 };
 

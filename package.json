@@ -1,10 +1,13 @@
 {
-  "name": "new-app",
+  "name": "app-name",
   "version": "1.0.0",
-  "description": "",
+  "description": "App description",
+  "engines": {
+    "node": ">=8.11.0"
+  },
   "main": "server.js",
   "scripts": {
-    "test": "gulp mocha",
+    "test": "gulp test",
     "serve": "nodemon server.js",
     "build": "gulp"
   },
@@ -13,18 +16,20 @@
   "dependencies": {
     "body-parser": "*",
     "cookie-parser": "*",
+    "del": "*",
     "express": "*",
     "express-handlebars": "*",
     "express-session": "*",
     "express-validator": "*",
     "helmet": "*",
     "mysql": "*",
-    "passport": "",
-    "prettyjson": "",
+    "passport": "*",
+    "prettyjson": "*",
     "serve-favicon": "*",
-    "compression": "^1.5.2",
-    "method-override": "^2.3.0",
-    "glob": "^6.0.4"
+    "compression": "*",
+    "method-override": "*",
+    "morgan": "*",
+    "glob": "*"
   },
   "devDependencies": {
     "babel-cli": "*",
@@ -44,9 +49,6 @@
     "gulp-sourcemaps": "*",
     "gulp-uglify-es": "*",
     "gulp-uglifycss": "*",
-    "jshint": "*",
-    "morgan": "*",
-    "webpack": "*",
-    "webpack-dev-server": "*"
+    "jshint": "*"
   }
 }

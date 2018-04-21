@@ -1,5 +1,9 @@
 const express = require('express'),
       router = express.Router(),
+      path = require('path'),
+      config = require(path.normalize(`${__dirname}/../../config/credentials`)),
+      textResponse = require(path.normalize(`${config.root}/utils/bsUtils`)).textResponse,
+      renderError = require(path.normalize(`${config.root}/utils/bsUtils`)).handleError,
       Article = require('../models/sampleModel');
 
 module.exports = (app) => app.use('/', router);

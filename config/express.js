@@ -1,4 +1,5 @@
 const express  = require('express'),
+      path  = require('path'),
       // bcrypt  = require('bcrypt'),
       passport  = require('passport'),
       helmet  = require('helmet'),
@@ -15,23 +16,22 @@ const express  = require('express'),
 
 
 module.exports = (app, config) => {
-  const env = process.env.NODE_ENV || 'development',
-      renderError = require(`${config.root}/utils/bsUtils`).renderError;
 
-  app.locals.ENV = env;
-  app.locals.ENV_DEVELOPMENT = env == 'development';
-  
+  const renderError = require(path.normalize(`${config.root}/utils/bsUtils`)).renderError;
+  app.locals.devEnv = config.envName == 'development';
+
   app.engine('hbs', hbs({
     extname: 'hbs',
-    layoutsDir: `${config.root}/app/views/layouts/`,
+    layoutsDir: path.normalize(`${config.root}/app/views/layouts/`),
     defaultLayout: 'main',
-    partialsDir: [`${config.root}/app/views/partials/`]
+    partialsDir: [path.normalize(`${config.root}/app/views/partials/`)]
   }));
-  app.set('views', `${config.root}/app/views`);
+
+  app.set('views', path.normalize(`${config.root}/app/views`));
   app.set('view engine', 'hbs');
 
-  app.use(helmet()); // Some header security
-  app.use(favicon(`${config.root}/public/files/favicon.ico`));
+  app.use(helmet());
+  app.use(favicon(path.normalize(`${config.root}/public/files/favicon.ico`)));
   app.use(logger('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({
@@ -39,7 +39,7 @@ module.exports = (app, config) => {
   }));
   app.use(cookieParser(config.security.cookieSecret));
   app.use(compress());
-  app.use(express.static(`${config.root}/public`));
+  app.use(express.static(path.normalize(`${config.root}/public`)));
   app.use(methodOverride());
   app.use(expressValidator());
   // app.use(expressSession({
@@ -50,32 +50,32 @@ module.exports = (app, config) => {
   app.use(passport.initialize());
   app.use(passport.session());
   app.use((req, res, next) => {
-    res.locals.showTests = app.get('env') !== 'production' && req.query.test === '1';
+    res.locals.showTests = app.locals.devEnv && req.query.test === '1';
     next();
   });
 
-  let controllers = glob.sync(`${config.root}/app/controllers/*.js`);
-  controllers.forEach((controller) => {
-    require(controller)(app);
-  });
+  // Import/Use all controllers
+  let controllers = glob.sync(path.normalize(`${config.root}/app/controllers/*.js`));
+  controllers.forEach(controller => require(controller)(app));
 
-  // 404 catch-all handler
+  // 404 handler
   app.use((req, res, next) => {
-    res.render('404', {
+    res.render('error', {
           title: 'Not Found - Bomdi Zane',
+          code: '404 - Not Found',
+          message: 'Sorry, The page you requested for does not exist!',
           stylesheet: '/css/error.min.css',
       });
   });
 
-  // 500 error handler
-  if (app.get('env') === 'development') {
+  // 500 handler
+  if (app.locals.devEnv) {
     app.use((err, req, res, next) => {
       console.error(err.stack);
       renderError(res);
     });
   }
-
-  app.use((err, req, res, next) => renderError(res));
+  else app.use((err, req, res, next) => renderError(res));
 
   return app;
 };

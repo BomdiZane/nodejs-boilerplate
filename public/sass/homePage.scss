@@ -2,6 +2,7 @@
 @import 'header';
 @import 'buttons';
 @import 'forms';
+@import 'socialIcons';
 @import 'footer';
 
 /*Sign In Main*/
@@ -69,4 +70,57 @@
 	justify-content: flex-start;
 	align-items: flex-start;
 	z-index: 1500;
+}
+
+
+// Table views holder
+#tableViewsHolder{
+	width: 89vw;
+	overflow: auto;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+// Casino Tables
+.casinoTable{
+	position: relative;
+	min-width: 160px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	@include border-radius($defaultRadius);
+	box-shadow: $defaultShadow;
+	font-family: Raleway;
+	background-color: $bzWhite;
+	padding-bottom: 10px;
+	margin: 15px 10px;
+	cursor: pointer;
+	overflow: hidden;
+	&:hover .cardFill{ animation: cardFillAni 0.4s ease forwards; }
+
+	.tableName{
+		width: 100%;
+		text-align: center;
+		padding: 5px;
+		margin: 0;
+		margin-bottom: 10px;
+		background-color: $primaryGrey;
+		font-size: 120%;
+		color: $bzGreen;
+		cursor: pointer;
+		@include border-radius($defaultRadius $defaultRadius 0 0);
+	}
+	.availableSeats{
+		font-size: 85%;
+		color: grey;
+		cursor: pointer;
+
+		span{
+			font-size: 110%;
+			color: $bzRed;
+			margin-left: 5px;
+		}
+	}
 }

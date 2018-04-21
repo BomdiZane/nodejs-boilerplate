@@ -13,6 +13,7 @@ $primaryBlue: #3a5b78;
 $primaryBlack: #2d333a;
 $secondaryBlack: #262b30;
 $paraColor: rgba(0,0,0,0.87);
+$defaultShadow: 0 3px 6px rgba(0,0,0,0.1);
 
 /*MIXINGS*/
 @mixin transition($values...){
@@ -59,7 +60,7 @@ h1{
 	cursor: default;
 	font: 170% Lato;
 	color: #1e9dc0;
-	margin-top: 60px;
+	margin-top: 20px;
 	margin-bottom: 10px;
 }
 
@@ -103,5 +104,5 @@ section{
 	width: 100vw;
 	min-height: 100vh;
 	padding: 50px;
-	margin-top: 80px;
+	margin-top: 20px;
 }
