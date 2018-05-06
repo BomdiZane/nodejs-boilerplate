@@ -1,9 +1,9 @@
-@import 'template';
-@import 'header';
-@import 'buttons';
-@import 'forms';
-@import 'socialIcons';
-@import 'footer';
+@import 'partials/template';
+@import 'partials/header';
+@import 'partials/buttons';
+@import 'partials/forms';
+@import 'partials/socialIcons';
+@import 'partials/footer';
 
 /*Sign In Main*/
 #loggedInUser,#signInDiv{
