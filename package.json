@@ -2,17 +2,26 @@
   "name": "app-name",
   "version": "1.0.0",
   "description": "App description",
+  "keywords": ["key", "words"],
+  "author": "Bomdi Zane <dzedock@yahoo.com> (https://bomdizane.azurewebsites.net)",
+  "contributors": [
+    
+  ],
   "engines": {
-    "node": ">=8.11.0"
+    "node": ">=8.11.0",
+    "npm": ">=5.6.0"
   },
-  "main": "server.js",
   "scripts": {
     "test": "gulp test",
     "serve": "nodemon server.js",
     "build": "gulp"
   },
-  "author": "Bomdi Zane",
   "license": "ISC",
+  "repository": {
+    
+  },
+  "homepage": "https://homepage.com",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "*",
     "cookie-parser": "*",
